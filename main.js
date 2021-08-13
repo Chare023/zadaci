@@ -43,12 +43,28 @@
 
 // zadatak4
 
-function transformisi2dU1dNiz(niz){
-  var newArr = [];
+// function transformisi2dU1dNiz(niz){
+//   var newArr = [];
 
-  for (let i = 0; i < niz.length; i++) {
-     newArr = newArr.concat(niz[i]);   
-  }
-  console.log(newArr);
+//   for (let i = 0; i < niz.length; i++) {
+//      newArr = newArr.concat(niz[i]);   
+//   }
+//   console.log(newArr);
+// }
+// transformisi2dU1dNiz([false, [1, 2], [3, 4], [5, 6], 7, 8, [9], [10], true]);
+
+// zadatak5
+
+// zadatak6
+function find(array, callback){
+    for (el of array) {
+        if(callback(el)) {
+            return el
+        }
+    }
+    return null;
 }
-transformisi2dU1dNiz([false, [1, 2], [3, 4], [5, 6], 7, 8, [9], [10], true]);
+const rez = find([23,12,425,987,653],function(el){
+    return el % 5 === 0;
+})
+console.log(rez);
