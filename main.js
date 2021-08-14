@@ -84,61 +84,62 @@
 
 // zadatak5
 
-class Osoba {
-    constructor(ime, godine) {
-        this.ime = ime;
-        this.godine = godine;
-    }
-}
+// class Osoba {
+//     constructor(ime, godine) {
+//         this.ime = ime;
+//         this.godine = godine;
+//     }
+// }
 
-class Student extends Osoba {
-    constructor(ime, godine, prosek) {
-        super(ime, godine);
-        this.prosek = prosek;
-    }
-}
+// class Student extends Osoba {
+//     constructor(ime, godine, prosek) {
+//         super(ime, godine);
+//         this.prosek = prosek;
+//     }
+// }
 
-class Profesor extends Osoba {
-    constructor(ime, godine, plata) {
-        super(ime, godine);
-        this.plata = plata;
-    }
-}
+// class Profesor extends Osoba {
+//     constructor(ime, godine, plata) {
+//         super(ime, godine);
+//         this.plata = plata;
+//     }
+// }
 
-function main() {
-    const studenti = [
-        new Student('pera', 23, 7.2),
-        new Student('djoka', 21, 9.1),
-        new Student('mika', 19, 8.5),
-        new Student('sima', 17, 8.6)
-    ];
+// function main() {
+//     const studenti = [
+//         new Student('pera', 23, 7.2),
+//         new Student('djoka', 21, 9.1),
+//         new Student('mika', 19, 8.5),
+//         new Student('sima', 17, 8.6)
+//     ];
     
-    const profesori = [
-        new Profesor('Raka', 54, 50000),
-        new Profesor('Jovo', 60, 55000),
-        new Profesor('Zarko', 57, 53000),
-        new Profesor('Miklja', 58, 54000)
-    ];
+//     const profesori = [
+//         new Profesor('Raka', 54, 50000),
+//         new Profesor('Jovo', 60, 55000),
+//         new Profesor('Zarko', 57, 53000),
+//         new Profesor('Miklja', 58, 54000)
+//     ];
 
-    studenti.sort(function(a, b){
-        return b.prosek - a.prosek
-    })
+//     studenti.sort(function(a, b){
+//         return b.prosek - a.prosek
+//     })
 
     
-    profesori.sort(function(a, b){
-        return b.plata - a.plata
-    })
+//     profesori.sort(function(a, b){
+//         return b.plata - a.plata
+//     })
 
-    return {
-        studenti,
-        profesori
-    }
-}
+//     return {
+//         studenti,
+//         profesori
+//     }
+// }
 
-const result = main()
-console.log(result)
+// const result = main()
+// console.log(result)
 
 // zadatak6
+
 // function find(array, callback){
 //     for (el of array) {
 //         if(callback(el)) {
@@ -153,16 +154,19 @@ console.log(result)
 // console.log(rez);
 
 // zadatak7
-// function printAnElementEachSecond(niz){
-    
+function printAnElementEachSecond(niz){
+    if (!Array.isArray(niz)) {
+        console.log('Prosledjena vrednost nije niz.')
+        return
+    }    
 
-//     for(let i = 1; i <= niz.length; i++){
-//         setTimeout(function(){
-//             console.log(niz[i - 1]);
-//           }, 5000 * i); 
-//     }
-// }
-// printAnElementEachSecond([1,2,34,5,6,7,9])
+    niz.forEach(function(el, i) {
+        setTimeout(function(){
+            console.log(el)
+        }, i * 1000)
+    })
+}
+printAnElementEachSecond([1,2,34,5,6,7,9])
 
 // Zadatak 8
 
